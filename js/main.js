@@ -78,8 +78,7 @@ function createBookElements() {
 function initStorage() {
   if (localStorage.getItem('books')) {
 	console.log('Yes books');
-	const booksList = JSON.parse(localStorage.getItem('books'));
-	books = booksList;
+	books = JSON.parse(localStorage.getItem('books'));
 	createBookElements();
   } else {
 	console.log('No books');
