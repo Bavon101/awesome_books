@@ -51,8 +51,7 @@ Additional description about the project and its features.
 👤 **Author**
 
 - GitHub: [@Bavon101](https://github.com/Bavon101)
-<!-- - Twitter: [@twitterhandle](https://twitter.com/twitterhandle) -->
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/akumu-bavon-335416193/)
+- GitHub: [@levy002](https://github.com/levy002)
 
 
 
