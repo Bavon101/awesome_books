@@ -29,7 +29,9 @@ function createBookElements() {
       const removeBtn = document.createElement('button');
       const btnText = document.createTextNode('Remove');
       removeBtn.onclick = function () {
-      	removeBook(b.id);
+        books = books.filter((a) => b.id !== a.id);
+        saveBooks();
+        createBookElements();
       };
       removeBtn.appendChild(btnText);
       bookCard.appendChild(removeBtn);
@@ -54,12 +56,6 @@ function addBook(title, author) {
     id: Date.now(),
   };
   books.unshift(book);
-  saveBooks();
-  createBookElements();
-}
-
-function removeBook(id) {
-  books = books.filter((b) => b.id !== id);
   saveBooks();
   createBookElements();
 }
