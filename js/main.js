@@ -8,19 +8,20 @@ function createBookElements() {
     booksList.style.listStyleType = 'none';
     booksList.style.margin = '0';
     booksList.style.padding = '0';
-    books.books.map((b) => {
+    for (let i = 0; i < books.books.length; i += 1){
+      const b = books.books[i];
       const bookCard = document.createElement('li');
-      const titleElement = document.createElement('h3');
+      if (~i & 1) {
+        bookCard.style.backgroundColor = 'white';
+      } else {
+        bookCard.style.backgroundColor = 'rgb(160, 153, 153)';
+      }
+      const titleElement = document.createElement('h4');
       titleElement.style.padding = '0';
       titleElement.style.margin = '0';
-      const titleText = document.createTextNode(b.title);
+      const titleText = document.createTextNode(`"${b.title}" by ${b.author}`);
       titleElement.appendChild(titleText);
       bookCard.appendChild(titleElement);
-      const authorElement = document.createElement('h4');
-      authorElement.style.margin = '0';
-      const authorText = document.createTextNode(b.author);
-      authorElement.appendChild(authorText);
-      bookCard.append(authorElement);
       const removeBtn = document.createElement('button');
       const btnText = document.createTextNode('Remove');
       removeBtn.onclick = function () {
@@ -31,10 +32,7 @@ function createBookElements() {
       removeBtn.appendChild(btnText);
       bookCard.appendChild(removeBtn);
       booksList.appendChild(bookCard);
-      const divider = document.createElement('hr');
-      booksList.appendChild(divider);
-      return booksList;
-    });
+    }
     booksSection.appendChild(booksList);
   } else {
     const noBooks = document.createElement('h3');
