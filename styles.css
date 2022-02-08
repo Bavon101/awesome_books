@@ -9,7 +9,6 @@ header {
 
 #books {
   border: 2px solid black;
-  padding: 10px 10px;
   width: 80%;
   margin: 0 auto;
 }
@@ -18,16 +17,28 @@ header {
   text-align: center;
 }
 
+#books ul {
+  margin: 0;
+  padding: 0;
+}
+
 #books li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 0;
+  margin: 0;
+}
+
+#books li button {
+  margin-right: 10px;
 }
 
 button {
-  border: 2px solid black;
+  border: 3px solid black;
   cursor: pointer;
   background-color: #fff;
+  font-weight: bolder;
 }
 
 hr {
