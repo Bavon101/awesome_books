@@ -1,3 +1,63 @@
 body {
   background-color: white;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+}
+
+#books {
+  border: 2px solid black;
+  padding: 10px 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#books h3 {
+  text-align: center;
+}
+
+#books li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+hr {
+  width: 30%;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.form-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+form label {
+  display: flex;
+}
+
+form input {
+  padding: 3px 3px;
+}
+
+form button {
+  width: 60px;
+  align-self: end;
 }
