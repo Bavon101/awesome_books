@@ -8,10 +8,10 @@ function createBookElements() {
     booksList.style.listStyleType = 'none';
     booksList.style.margin = '0';
     booksList.style.padding = '0';
-    for (let i = 0; i < books.books.length; i += 1){
+    for (let i = 0; i < books.books.length; i += 1) {
       const b = books.books[i];
       const bookCard = document.createElement('li');
-      if (~i & 1) {
+      if (i % 2) {
         bookCard.style.backgroundColor = 'white';
       } else {
         bookCard.style.backgroundColor = 'rgb(160, 153, 153)';
@@ -41,7 +41,6 @@ function createBookElements() {
     booksSection.appendChild(noBooks);
   }
 }
-
 
 function getAddedBook() {
   const title = document.getElementById('title').value;

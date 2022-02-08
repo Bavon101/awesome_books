@@ -7,6 +7,13 @@ header {
   text-align: center;
 }
 
+button {
+  border: 3px solid black;
+  cursor: pointer;
+  background-color: #fff;
+  font-weight: bolder;
+}
+
 #books {
   border: 2px solid black;
   width: 80%;
@@ -22,6 +29,11 @@ header {
   padding: 0;
 }
 
+form button {
+  width: 60px;
+  align-self: end;
+}
+
 #books li {
   display: flex;
   justify-content: space-between;
@@ -32,13 +44,6 @@ header {
 
 #books li button {
   margin-right: 10px;
-}
-
-button {
-  border: 3px solid black;
-  cursor: pointer;
-  background-color: #fff;
-  font-weight: bolder;
 }
 
 hr {
@@ -66,9 +71,4 @@ form label {
 
 form input {
   padding: 3px 3px;
-}
-
-form button {
-  width: 60px;
-  align-self: end;
 }
