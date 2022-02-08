@@ -5,7 +5,7 @@ class AwesomeBooks {
     const booksList = JSON.stringify(this.books);
     localStorage.setItem('books', booksList);
   }
-  
+
   addBook(title, author) {
     const book = {
       title,
