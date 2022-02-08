@@ -1,8 +1,5 @@
 class AwesomeBooks {
   books = [];
-  constructor() {
-    this.books
-  }
   saveBooks() {
     const booksList = JSON.stringify(this.books);
     localStorage.setItem('books', booksList);
