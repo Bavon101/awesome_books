@@ -1,19 +1,14 @@
-let books = [];
+const books = new AwesomeBooks();
 const booksSection = document.getElementById('books');
 const form = document.getElementById('book_form');
-
-function saveBooks() {
-  const booksList = JSON.stringify(books);
-  localStorage.setItem('books', booksList);
-}
 function createBookElements() {
   booksSection.replaceChildren();
-  if (books.length > 0) {
+  if (books.books.length > 0) {
     const booksList = document.createElement('ul');
     booksList.style.listStyleType = 'none';
     booksList.style.margin = '0';
     booksList.style.padding = '0';
-    books.map((b) => {
+    books.books.map((b) => {
       const bookCard = document.createElement('li');
       const titleElement = document.createElement('h3');
       titleElement.style.padding = '0';
@@ -29,8 +24,8 @@ function createBookElements() {
       const removeBtn = document.createElement('button');
       const btnText = document.createTextNode('Remove');
       removeBtn.onclick = function () {
-        books = books.filter((a) => b.id !== a.id);
-        saveBooks();
+        books.removeBook(b.id);
+        books.saveBooks();
         createBookElements();
       };
       removeBtn.appendChild(btnText);
@@ -49,27 +44,18 @@ function createBookElements() {
   }
 }
 
-function addBook(title, author) {
-  const book = {
-    title,
-    author,
-    id: Date.now(),
-  };
-  books.unshift(book);
-  saveBooks();
-  createBookElements();
-}
 
 function getAddedBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  addBook(title, author);
+  books.addBook(title, author);
+  createBookElements();
   form.reset();
 }
 
 function initStorage() {
   if (localStorage.getItem('books')) {
-    books = JSON.parse(localStorage.getItem('books'));
+    books.getStoredBooks();
     createBookElements();
   } else {
     createBookElements();
