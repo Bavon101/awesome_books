@@ -12,7 +12,9 @@ Additional description about the project and its features.
 
 
 ## Screenshots Mobile 📷📲
-![screenshot](./src/screenshots/screen_0_1.PNG)
+![screenshot](./src/screenshots/screen_1_0.PNG)
+![screenshot](./src/screenshots/screen_1_1.PNG)
+![screenshot](./src/screenshots/screen_1_2.PNG)
 ## Built With
 
 - HTML
