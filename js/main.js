@@ -108,14 +108,13 @@ function showAndHide(id) {
       if (s.id !== 'books') {
         s.style.display = 'flex';
       } else {
-         s.style.display = 'block';
+        s.style.display = 'block';
       }
     } else {
-     s.style.display = 'none';
+      s.style.display = 'none';
     }
     return s;
   });
-  
 }
 
 function updateView(id) {
@@ -130,7 +129,7 @@ function updateView(id) {
       newTag.classList.toggle('active_menu');
     }
     deactivateActivity(id);
-    showAndHide('form_section')
+    showAndHide('form_section');
   } else if (id === contactTag.id) {
     if (!contactTag.classList.contains('active_menu')) {
       contactTag.classList.toggle('active_menu');
@@ -138,18 +137,16 @@ function updateView(id) {
     deactivateActivity(id);
     showAndHide('contact');
   }
-  console.log("pressed");
 }
 
 function createDate() {
   const d = new Date();
-  document.getElementById('time').innerHTML =  d;
+  document.getElementById('time').innerHTML = d;
 }
-
 
 initStorage();
 form.addEventListener('submit', getAddedBook);
-listTag.addEventListener('click', () => { updateView(listTag.id) });
-newTag.addEventListener('click', () => { updateView(newTag.id) });
-contactTag.addEventListener('click', () => { updateView(contactTag.id) });
+listTag.addEventListener('click', () => { updateView(listTag.id); });
+newTag.addEventListener('click', () => { updateView(newTag.id); });
+contactTag.addEventListener('click', () => { updateView(contactTag.id); });
 createDate();
