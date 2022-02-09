@@ -28,6 +28,9 @@ class AwesomeBooks {
 const books = new AwesomeBooks();
 const booksSection = document.getElementById('books');
 const form = document.getElementById('book_form');
+const listTag = document.getElementById('list');
+const newTag = document.getElementById('new');
+const contactTag = document.getElementById('contact_section');
 function createBookElements() {
   booksSection.replaceChildren();
   if (books.books.length > 0) {
@@ -86,5 +89,64 @@ function initStorage() {
   }
 }
 
+function deactivateActivity(id) {
+  const menus = [listTag, newTag, contactTag];
+  menus.map((m) => {
+    if (m.id !== id) {
+      m.classList.remove('active_menu');
+    }
+    return m;
+  });
+}
+
+function showAndHide(id) {
+  const formSection = document.getElementById('form_section');
+  const contactSection = document.getElementById('contact');
+  const sections = [booksSection, formSection, contactSection];
+  sections.map((s) => {
+    if (s.id === id) {
+      if (s.id !== 'books') {
+        s.style.display = 'flex';
+      } else {
+        s.style.display = 'block';
+      }
+    } else {
+      s.style.display = 'none';
+    }
+    return s;
+  });
+}
+
+function updateView(id) {
+  if (id === listTag.id) {
+    if (!listTag.classList.contains('active_menu')) {
+      listTag.classList.toggle('active_menu');
+    }
+    deactivateActivity(id);
+    showAndHide('books');
+  } else if (id === newTag.id) {
+    if (!newTag.classList.contains('active_menu')) {
+      newTag.classList.toggle('active_menu');
+    }
+    deactivateActivity(id);
+    showAndHide('form_section');
+  } else if (id === contactTag.id) {
+    if (!contactTag.classList.contains('active_menu')) {
+      contactTag.classList.toggle('active_menu');
+    }
+    deactivateActivity(id);
+    showAndHide('contact');
+  }
+}
+
+function createDate() {
+  const d = new Date();
+  document.getElementById('time').innerHTML = d;
+}
+
 initStorage();
 form.addEventListener('submit', getAddedBook);
+listTag.addEventListener('click', () => { updateView(listTag.id); });
+newTag.addEventListener('click', () => { updateView(newTag.id); });
+contactTag.addEventListener('click', () => { updateView(contactTag.id); });
+createDate();
