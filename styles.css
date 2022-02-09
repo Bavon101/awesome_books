@@ -31,6 +31,12 @@ nav h3 {
   margin: 0;
 }
 
+nav a:hover{
+  color: blue;
+}
+
+
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -109,7 +115,7 @@ form input {
 }
 
 #contact {
-  display: flex;
+  display: none;
   flex-flow: column;
   width: 60%;
   margin: 0 auto;
@@ -127,11 +133,23 @@ footer {
   width: 95%;
   display: flex;
   margin: 40px auto 0;
-}  
+}
 
 footer > * {
   border: 2px solid black;
   width: 100%;
   margin: 0;
   padding: 5px 5px;
+}
+
+.active_menu {
+  color: blue;
+}
+
+.dispeared {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
