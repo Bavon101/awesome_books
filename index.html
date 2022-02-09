@@ -10,15 +10,32 @@
 
 	<body>
 	 <header>
-		 <h1>
-			 Awesome Books
-		 </h1>
+		 <nav>
+			 <h3>
+				 Awesome Books
+			 </h3>
+			 <ul>
+				 <li>
+					 <a href="#list">List</a>
+				 </li>
+				 <li>
+				 	<a href="#new">Add new</a>
+				 </li>
+				 <li>
+				 	<a href="#contact">Contact</a>
+				 </li>
+			 </ul>
+		 </nav>
+		 <p id="time">Date</p>
 	 </header>	
 	 <section id="books">	
+		 <h2>
+			 All Awesome Books
+		 </h2>
 	 </section>
 	 <hr>
 	 <section class="form-section">
-		 <h3>Add new book</h3>
+		 <h3>Add a new book</h3>
 		 <form action="#" id="book_form">
 			 <label for="title">
 				 <input type="text" placeholder="Title" id="title" required/>
@@ -29,6 +46,32 @@
 			<button type="submit" id="add-btn">Add</button>
 		 </form>
 	 </section>
+
+	 <section id="contact">
+		<h3>Contact information</h3>
+
+		<p>
+			Do you have any questions or you just want to say "Hello"?
+		</p>
+		<p>You can reach out to us!</p>
+		<ul>
+			<li>
+				Our e-mail awesomebooks@gmail.com
+			</li>
+			<li>
+				Our phone number 004358654422
+			</li>
+			<li>
+				Our address Central City , 22 84503
+			</li>
+		</ul>
+	 </section>
+
+	 <footer>
+		 <div>
+			 Copyright
+		 </div>
+	 </footer>
 	<script src="./js/books.js"></script>
 	 <script src="./js/main.js"></script>
 	</body>
